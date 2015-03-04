@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.util.Random;
+import java.awt.*;
 
 /**
  * Class DrawDemo - provides some short demonstrations showing how to use the 
@@ -22,8 +23,8 @@ public class DrawDemo
         myCanvas = new Canvas("Drawing Demo", 500, 400);  
         myCanvas.erase();
         random = new Random();
-    }
-
+    }    
+     
     /**
      * Draw a square on the screen.
      */
@@ -48,7 +49,31 @@ public class DrawDemo
             pen.turn(10);
         }
     }
+    
+    /**
+     * Draw a triangle made of many squares.
+     */
+    public void drawTriangle(int x, int y) {
+        Pen pen = new Pen(x, y, myCanvas);
+        pen.setColor(Color.GREEN);
 
+        for (int i=0; i<3; i++) {
+            pen.move(100);
+            pen.turn(120);
+        }
+    }
+    
+    public void drawPolygon(int n) {
+        int angle = 360/n;
+        Pen pen = new Pen(100, 100, myCanvas);
+        pen.setColor(Color.GREEN);
+
+        for (int i=0; i < n; i++) {
+            pen.move(100);
+            pen.turn(angle);
+        }
+    }
+    
     /**
      * Draw a square in the pen's color at the pen's location.
      */

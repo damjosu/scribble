@@ -134,7 +134,7 @@ public class Canvas
     {
         fill(new Rectangle(xPos, yPos, width, height));
     }
-
+    
     /**
      * Erase the whole canvas.
      */
